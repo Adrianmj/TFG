@@ -20,7 +20,7 @@ public class MovingCamera : MonoBehaviour
     {
         CharacterController controller = GetComponent<CharacterController>();
         if (controller.isGrounded)
-        {
+        {   
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= speed;
@@ -36,4 +36,6 @@ public class MovingCamera : MonoBehaviour
 
         transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
     }
+
+
 }
