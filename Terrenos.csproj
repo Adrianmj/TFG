@@ -87,7 +87,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\AdjustHeights.cs" />
     <Compile Include="Assets\Asset Store\TerrainToolkit\TerrainToolkit.cs" />
     <Compile Include="Assets\Asset Store\TerrainToolkit\com\heparo\terrain\toolkit\scripts\TerrainToolkit.cs" />
     <Compile Include="Assets\GoogleVR\Demos\Scripts\DemoInputManager.cs" />
@@ -199,9 +198,10 @@
     <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrIntent.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrUIHelpers.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
+    <Compile Include="Assets\Scripts\AdjustHeights.cs" />
     <Compile Include="Assets\Scripts\MovingCamera.cs" />
     <Compile Include="Assets\Scripts\WallController.cs" />
-    <Compile Include="Assets\waveController.cs" />
+    <Compile Include="Assets\Scripts\waveController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Asset Store\TerrainToolkit\Read me.txt" />
