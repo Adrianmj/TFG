@@ -1,5 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
+using UnityStandardAssets.CrossPlatformInput;
+using UnityStandardAssets.Utility;
+using Random = UnityEngine.Random;
+[RequireComponent(typeof (CharacterController))]
 
 public class MovingCamera : MonoBehaviour
 {
@@ -15,13 +20,12 @@ public class MovingCamera : MonoBehaviour
     private float yaw = 0.0f;
     private float pitch = 0.0f;
 
-
     void Update()
     {
         CharacterController controller = GetComponent<CharacterController>();
         if (controller.isGrounded)
         {   
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+			moveDirection = new Vector3(CrossPlatformInputManager.GetAxis("Horizontal"), 0, CrossPlatformInputManager.GetAxis("Vertical"));
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= speed;
             if (Input.GetButton("Jump"))
@@ -31,11 +35,15 @@ public class MovingCamera : MonoBehaviour
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
 
-        yaw += speedH * Input.GetAxis("Mouse X");
-        pitch -= speedV * Input.GetAxis("Mouse Y");
+//		yaw += speedH * CrossPlatformInputManager.GetAxis("Mouse X");
+//		pitch -= speedV * CrossPlatformInputManager.GetAxis("Mouse Y");
+//
+//		transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
 
-        transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
-    }
+
+
+	}
+
 
 
 }
