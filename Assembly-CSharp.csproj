@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Asset Store\TerrainToolkit\TerrainToolkit.cs" />
      <Compile Include="Assets\Asset Store\TerrainToolkit\com\heparo\terrain\toolkit\scripts\TerrainToolkit.cs" />
+     <Compile Include="Assets\FPSDisplay.cs" />
      <Compile Include="Assets\GoogleVR\Demos\Scripts\DemoInputManager.cs" />
      <Compile Include="Assets\GoogleVR\Demos\Scripts\DemoSceneManager.cs" />
      <Compile Include="Assets\GoogleVR\Demos\Scripts\GVRDemo\GVRDemoManager.cs" />
@@ -158,6 +159,7 @@
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrUIHelpers.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
      <Compile Include="Assets\Scripts\Controlador.cs" />
+     <Compile Include="Assets\Scripts\Pointer.cs" />
      <Compile Include="Assets\Scripts\canvasController.cs" />
      <Compile Include="Assets\Scripts\waveController.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
