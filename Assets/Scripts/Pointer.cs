@@ -4,33 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Pointer : MonoBehaviour {
 
-	public Text titulo;
-	public Text texto;
-	private List<string> colisiones;
+	public GameObject direccion;
+	private RaycastHit hit;
+	public float distance = 1000;
 	// Use this for initialization
 	void Start () {
-		colisiones = new List<string> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		if (Physics.Raycast (transform.position, (direccion.transform.position - transform.position), out hit, distance)) {
+			if (hit.transform.tag == "Fosiles") {
+				Debug.Log ("FOSIL TE VEO");
+			} else {
+				Debug.Log (hit.transform.name);
+			}
+		}
 	}
 
-	void OnCollisionEnter(Collision col){
-//		if (col.gameObject.tag == "Fosiles") {
-//			Debug.Log ("Nombre: " + col.gameObject.name);
-//		}
 
-	}
-	void OnCollisionStay(Collision col){
-//		if (col.gameObject.tag == "Fosiles") {
-//
-//			if(!colisiones.Contains(col.gameObject.name)){
-//				colisiones.Add(col.gameObject.name);
-//			}
-//			Debug.Log (colisiones.Count);
-//			Debug.Log ("ESTA COLISIONANDO CON: " + col.gameObject.name);
-//		}
-	}
 }
