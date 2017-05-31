@@ -11,16 +11,23 @@ public class Pointer : MonoBehaviour {
 	public GameObject panel;
 	public Text titulo;
 	public Text texto;
+	
 	// Use this for initialization
 	void Start () {
 	}
 
 	void setPanel(){
-		TextAsset level = Resources.Load<TextAsset> (Application.persistentDataPath +"Textos/Persististrombus_latus.txt");
-		 
+		
+		//TextAsset level = Resources.Load("Resources/Textos/Persististrombus_latus.txt") as TextAsset; 
 
-		titulo.text = level.text;
-		//texto.text = text[1];
+		
+		TextAsset text = (TextAsset) Resources.Load( "Persististrombuslatus", typeof( TextAsset ) );
+
+
+		Debug.Log (text.text);
+		string [] lineas = text.text.Split("\n"[0]);
+		titulo.text = lineas[0];
+		texto.text = lineas[1];
 	}
 	// Update is called once per frame
 	void Update () {
