@@ -11,7 +11,7 @@ public class Pointer : MonoBehaviour {
 	public GameObject panel;
 	public Text titulo;
 	public Text texto;
-	
+	private bool showingPanel=false;
 	// Use this for initialization
 	void Start () {
 	}
@@ -28,12 +28,13 @@ public class Pointer : MonoBehaviour {
 		string [] lineas = text.text.Split("\n"[0]);
 		titulo.text = lineas[0];
 		texto.text = lineas[1];
+		showingPanel = true;
 	}
 	// Update is called once per frame
 	void Update () {
 		
 		if (Physics.Raycast (transform.position, (direccion.transform.position - transform.position), out hit, distance)) {
-			if (hit.transform.tag == "Fosiles") {
+			if (hit.transform.tag == "Fosiles" && !showingPanel) {
 				botones.active =true;
 				if (Input.GetKeyDown("joystick button 0")) {
 					setPanel ();
@@ -44,6 +45,11 @@ public class Pointer : MonoBehaviour {
 				botones.active = false;
 
 			}
+		}
+
+		if(Input.GetKeyDown("joystick button 1")){
+			showingPanel = false;
+			panel.active = false;
 		}
 	}
 
