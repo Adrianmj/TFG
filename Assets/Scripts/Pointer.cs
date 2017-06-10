@@ -5,6 +5,9 @@ using UnityEngine.UI;
 public class Pointer : MonoBehaviour {
 
 	public GameObject direccion;
+	public GameObject punteroHelper1;
+	public GameObject punteroHelper2;
+
 	private RaycastHit hit;
 	public float distance = 1000;
 	public GameObject botones;
@@ -12,12 +15,16 @@ public class Pointer : MonoBehaviour {
 	public Text titulo;
 	public Text texto;
 	private bool showingPanel=false;
+	public LineRenderer linea;
+	public Material rojo;
+	public Material azul;
 	// Use this for initialization
 	void Start () {
+		linea.positionCount = 2;
 	}
 
 	void setPanel(){
-		
+
 		//TextAsset level = Resources.Load("Resources/Textos/Persististrombus_latus.txt") as TextAsset; 
 
 		
@@ -32,9 +39,12 @@ public class Pointer : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		
+		linea.SetPosition (0, punteroHelper1.transform.position);
+		linea.SetPosition (1, punteroHelper2.transform.position);
+
 		if (Physics.Raycast (transform.position, (direccion.transform.position - transform.position), out hit, distance)) {
 			if (hit.transform.tag == "Fosiles" && !showingPanel) {
+				linea.material = rojo;
 				botones.active =true;
 				if (Input.GetKeyDown("joystick button 0")) {
 					setPanel ();
@@ -43,6 +53,7 @@ public class Pointer : MonoBehaviour {
 
 			} else {
 				botones.active = false;
+				linea.material = azul;
 
 			}
 		}
