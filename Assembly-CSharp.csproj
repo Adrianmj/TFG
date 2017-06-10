@@ -160,6 +160,7 @@
      <Compile Include="Assets\Scripts\Controlador.cs" />
      <Compile Include="Assets\Scripts\Pointer.cs" />
      <Compile Include="Assets\Scripts\canvasController.cs" />
+     <Compile Include="Assets\Scripts\underwater.cs" />
      <Compile Include="Assets\Scripts\waveController.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
