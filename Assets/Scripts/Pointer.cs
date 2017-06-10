@@ -23,12 +23,12 @@ public class Pointer : MonoBehaviour {
 		linea.positionCount = 2;
 	}
 
-	void setPanel(){
+	void setPanel(string nombreFosil){
 
 		//TextAsset level = Resources.Load("Resources/Textos/Persististrombus_latus.txt") as TextAsset; 
 
-		
-		TextAsset text = (TextAsset) Resources.Load( "Persististrombuslatus", typeof( TextAsset ) );
+		Debug.Log (nombreFosil);
+		TextAsset text = (TextAsset) Resources.Load( nombreFosil, typeof( TextAsset ) );
 
 
 		Debug.Log (text.text);
@@ -47,7 +47,7 @@ public class Pointer : MonoBehaviour {
 				linea.material = rojo;
 				botones.active =true;
 				if (Input.GetKeyDown("joystick button 0")) {
-					setPanel ();
+					setPanel (hit.transform.name);
 					panel.active =true;       
 				}
 
