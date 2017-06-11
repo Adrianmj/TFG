@@ -2,7 +2,60 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class underwater : MonoBehaviour {
+public class underwater : MonoBehaviour
+{
+
+    public GameObject alturaActual;
+
+    public float waterLevel;
+    private bool isUnderWater = false;
+    private Color normalColor;
+    public Color underWaterColor;
+
+    void Start()
+    {
+
+        normalColor = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+
+    }
+
+    void Update()
+    {
 
 
+        if ((alturaActual.transform.position.y < waterLevel) != isUnderWater)
+        {
+
+            isUnderWater = alturaActual.transform.position.y < waterLevel;
+
+            if (isUnderWater)
+            {
+                SetUnderWater();
+            }
+
+            if (!isUnderWater)
+            {
+
+                SetNormal();
+            }
+
+        }
+
+    }
+
+    void SetNormal()
+    {
+        Debug.Log("OVERWATER");
+
+        RenderSettings.fogColor = normalColor;
+        RenderSettings.fogDensity = 0.002f;
+
+    }
+    void SetUnderWater()
+    {
+        Debug.Log("UNDERWATER");
+        RenderSettings.fogColor = underWaterColor;
+        RenderSettings.fogDensity = 0.03f;
+
+    }
 }
