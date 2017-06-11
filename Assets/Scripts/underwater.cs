@@ -55,7 +55,7 @@ public class underwater : MonoBehaviour
     {
         Debug.Log("UNDERWATER");
         RenderSettings.fogColor = underWaterColor;
-        RenderSettings.fogDensity = 0.03f;
+        RenderSettings.fogDensity = 0.01f;
 
     }
 }
