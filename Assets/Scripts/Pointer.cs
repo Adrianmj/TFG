@@ -52,6 +52,7 @@ public class Pointer : MonoBehaviour
                 botones.SetActive(true);
                 if (Input.GetKeyDown("joystick button 0"))
                 {
+
                     setPanel(hit.transform.name);
                     panel.SetActive(true);
                 }
