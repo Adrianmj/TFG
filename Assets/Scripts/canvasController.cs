@@ -11,8 +11,14 @@ public class canvasController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        Selector prueba = new Selector();
+        if (Input.GetKeyDown("joystick button 0") && Selector.NombreGlobal.nombre == transform.parent.name)
+        {
+            Debug.Log(Selector.NombreGlobal.nombre);
 
-		transform.LookAt(camara.transform);
-
-	}
+        }
+        transform.LookAt(camara.transform);
+        RectTransform cuadrado = GetComponent<RectTransform>();
+        cuadrado.localPosition = new Vector3(0, cuadrado.localPosition.y, cuadrado.localPosition.z);
+    }
 }

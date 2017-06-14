@@ -198,7 +198,7 @@
     <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrIntent.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrUIHelpers.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
-    <Compile Include="Assets\Scripts\Pointer.cs" />
+    <Compile Include="Assets\Scripts\Selector.cs" />
     <Compile Include="Assets\Scripts\canvasController.cs" />
     <Compile Include="Assets\Scripts\underwater.cs" />
     <Compile Include="Assets\Scripts\waveController.cs" />

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class Pointer : MonoBehaviour
+public class  Selector : MonoBehaviour
 {
 
     public GameObject direccion;
@@ -11,9 +11,6 @@ public class Pointer : MonoBehaviour
     private RaycastHit hit;
     public float distance = 1000;
     public GameObject botones;
-    public GameObject panel;
-    public Text titulo;
-    public Text texto;
     private bool showingPanel = false;
 
     public GameObject pointer;
@@ -33,8 +30,8 @@ public class Pointer : MonoBehaviour
 
         Debug.Log(text.text);
         string[] lineas = text.text.Split("\n"[0]);
-        titulo.text = lineas[0];
-        texto.text = lineas[1];
+        //titulo.text = lineas[0];
+        //texto.text = lineas[1];
         showingPanel = true;
 
 
@@ -49,19 +46,14 @@ public class Pointer : MonoBehaviour
             if (hit.transform.tag == "Fosiles" && !showingPanel)
             {
                 pointer.transform.GetComponent<Renderer>().material.color = Color.red;
+                NombreGlobal.nombre = hit.transform.name;
                 botones.SetActive(true);
-                if (Input.GetKeyDown("joystick button 0"))
-                {
-
-                    setPanel(hit.transform.name);
-                    panel.SetActive(true);
-                }
 
             }
             else
             {
                 pointer.transform.GetComponent<Renderer>().material.color = Color.blue;
-
+                NombreGlobal.nombre = "";
                 botones.SetActive(false);
 
             }
@@ -70,9 +62,15 @@ public class Pointer : MonoBehaviour
         if (Input.GetKeyDown("joystick button 1"))
         {
             showingPanel = false;
-            panel.SetActive(false);
+            //panel.SetActive(false);
         }
     }
 
+
+    public static class NombreGlobal
+    {
+        public static string nombre;
+
+    }
 
 }
