@@ -9,12 +9,15 @@ public class  Selector : MonoBehaviour
 
 
     private RaycastHit hit;
-    public float distance = 1000;
+    public float distance = 100;
     public GameObject botones;
     private bool showingPanel = false;
-
+    public GameObject panel;
     public GameObject pointer;
+    public Camera camara;
 
+    public Text titulo;
+    public Text texto;
     // Use this for initialization
     void Start()
     {
@@ -30,47 +33,43 @@ public class  Selector : MonoBehaviour
 
         Debug.Log(text.text);
         string[] lineas = text.text.Split("\n"[0]);
-        //titulo.text = lineas[0];
-        //texto.text = lineas[1];
+        titulo.text = lineas[0];
+        texto.text = lineas[1];
         showingPanel = true;
-
+        panel.transform.position = new Vector3(hit.transform.position.x, transform.position.y + 5, hit.transform.position.z);
+        panel.transform.LookAt(camara.transform);
+        panel.SetActive(true);
 
     }
     // Update is called once per frame
     void Update()
     {
 
-
+        pointer.transform.GetComponent<Renderer>().material.color = Color.blue;
+        botones.SetActive(false);
         if (Physics.Raycast(transform.position, (direccion.transform.position - transform.position), out hit, distance))
         {
-            if (hit.transform.tag == "Fosiles" && !showingPanel)
+            if (hit.transform.tag == "Fosiles" /*&& !showingPanel*/)
             {
                 pointer.transform.GetComponent<Renderer>().material.color = Color.red;
-                NombreGlobal.nombre = hit.transform.name;
                 botones.SetActive(true);
-
+                if (Input.GetKeyDown("joystick button 0")){
+                    
+                    
+                    setPanel(hit.transform.name);
+                }
             }
-            else
-            {
-                pointer.transform.GetComponent<Renderer>().material.color = Color.blue;
-                NombreGlobal.nombre = "";
-                botones.SetActive(false);
-
-            }
+            
         }
-
+       
         if (Input.GetKeyDown("joystick button 1"))
         {
             showingPanel = false;
-            //panel.SetActive(false);
+            panel.SetActive(false);
         }
     }
 
 
-    public static class NombreGlobal
-    {
-        public static string nombre;
-
-    }
+   
 
 }
