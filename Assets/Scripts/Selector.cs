@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class  Selector : MonoBehaviour
+public class Selector : MonoBehaviour
 {
 
     public GameObject direccion;
@@ -34,9 +34,14 @@ public class  Selector : MonoBehaviour
         Debug.Log(text.text);
         string[] lineas = text.text.Split("\n"[0]);
         titulo.text = lineas[0];
-        texto.text = lineas[1];
+        texto.text = "";
+        for (int i = 1; i < lineas.Length; i++)
+        {
+            texto.text += ("\n" + lineas[i]);
+        }
+
         showingPanel = true;
-        panel.transform.position = new Vector3(hit.transform.position.x, transform.position.y + 5, hit.transform.position.z);
+        panel.transform.position = new Vector3(hit.transform.position.x, transform.position.y + 2, hit.transform.position.z);
         panel.transform.LookAt(camara.transform);
         panel.SetActive(true);
 
@@ -53,15 +58,16 @@ public class  Selector : MonoBehaviour
             {
                 pointer.transform.GetComponent<Renderer>().material.color = Color.red;
                 botones.SetActive(true);
-                if (Input.GetKeyDown("joystick button 0")){
-                    
-                    
+                if (Input.GetKeyDown("joystick button 0"))
+                {
+
+
                     setPanel(hit.transform.name);
                 }
             }
-            
+
         }
-       
+
         if (Input.GetKeyDown("joystick button 1"))
         {
             showingPanel = false;
@@ -70,6 +76,6 @@ public class  Selector : MonoBehaviour
     }
 
 
-   
+
 
 }

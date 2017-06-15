@@ -171,6 +171,7 @@
     <None Include="Assets\Plugins\Android\AndroidManifest-Cardboard.xml" />
     <None Include="Assets\Plugins\Android\AndroidManifest-Daydream.xml" />
     <None Include="Assets\Plugins\Android\proguard-gvr.txt" />
+    <None Include="Assets\Resources\Certium_vulgatum.txt" />
     <None Include="Assets\Resources\Persististrombus_latus.txt" />
     <None Include="Assets\Resources\Vermetus_Adansonii.txt" />
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
