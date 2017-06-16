@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 679, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 47
+  controlID: 21
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,10 +130,10 @@ MonoBehaviour:
     y: 0
     width: 1405
     height: 947
-  m_MinSize: {x: 404, y: 492}
+  m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 62
+  controlID: 22
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,10 +154,10 @@ MonoBehaviour:
     y: 0
     width: 1405
     height: 671
-  m_MinSize: {x: 404, y: 221}
-  m_MaxSize: {x: 8004, y: 4021}
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 63
+  controlID: 23
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -176,8 +176,8 @@ MonoBehaviour:
     y: 0
     width: 214
     height: 671
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -201,8 +201,8 @@ MonoBehaviour:
     y: 0
     width: 1191
     height: 671
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -366,20 +366,20 @@ MonoBehaviour:
     height: 650
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0afcfeff
-    m_LastClickedID: -66550
-    m_ExpandedIDs: 6e17ffff0018ffff001affff984bffff1a4cffff1c4effffe45bffff9a5cffff9c5effff36afffffc6afffffc6b1ffff4cc3ffff82fbffff9afbffffdefbffffe0fbffff00000000dc310000423b0000483b0000623b0000fc3b0000cc490000e850000034510000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 6278feff0a79feff0a7bfeff98b6feffe0fbffff000000000232000044320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Vermetus_Adansonii
-      m_OriginalName: Vermetus_Adansonii
+      m_Name: Saccostrea_Cuccullata
+      m_OriginalName: Saccostrea_Cuccullata
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -1058
+      m_UserData: -70620
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -418,14 +418,14 @@ MonoBehaviour:
     width: 1187
     height: 650
   m_SceneLighting: 1
-  lastFramingTime: 3879.061760611273
+  lastFramingTime: 7842.03975457129
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 596.682, y: 50.8678, z: 158.36786}
+    m_Target: {x: 675.78906, y: 42.74048, z: 147.61963}
     speed: 2
-    m_Value: {x: 596.682, y: 50.8678, z: 158.36786}
+    m_Value: {x: 675.78906, y: 42.74048, z: 147.61963}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -440,21 +440,21 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
     yGrid:
-      m_Target: 1
+      m_Target: 0
       speed: 2
-      m_Value: 1
+      m_Value: 0
     zGrid:
       m_Target: 0
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.15006073, y: -0.5651518, z: 0.105590716, w: 0.8045408}
+    m_Target: {x: -0.033397872, y: -0.5583339, z: -0.022891894, w: 0.8286369}
     speed: 2
-    m_Value: {x: 0.15003447, y: -0.5650529, z: 0.10557224, w: 0.8044}
+    m_Value: {x: -0.03339762, y: -0.55832964, z: -0.022891719, w: 0.82863057}
   m_Size:
-    m_Target: 3.5535796
+    m_Target: 4.551492
     speed: 2
-    m_Value: 3.5535796
+    m_Value: 4.551492
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -530,17 +530,17 @@ MonoBehaviour:
     m_Folders:
     - Assets/Modelos
   m_ViewMode: 1
-  m_StartGridSize: 64
+  m_StartGridSize: 56
   m_LastFolders:
   - Assets/Modelos
-  m_LastFoldersGridSize: -1
+  m_LastFoldersGridSize: 56
   m_LastProjectPath: C:\Users\Adrian\Documents\Terrenos
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 306}
-    m_SelectedIDs: a0290000
-    m_LastClickedID: 10656
-    m_ExpandedIDs: 00000000c0270000ee27000042280000022900003a29000056290000a0290000022a0000a22a0000e02a0000fa2a00000e2b0000ce2b0000e82b00002e2c0000702c0000d82c0000f42c0000542d00005e2e0000282f00006c2f0000882f0000f42f0000fc2f0000143000002e300000563000002c3300002e33000030330000323300003433000036330000383300003a33000000ca9a3bffffff7f
+    m_SelectedIDs: aa290000
+    m_LastClickedID: 10666
+    m_ExpandedIDs: 00000000c2270000f02700004a2800000c2900004429000060290000aa2900000e2a0000ae2a0000ee2a0000082b00001c2b0000de2b0000f82b00003e2c0000802c0000ea2c0000062d0000702d0000822e00004e2f0000922f0000ae2f00001a300000223000003a300000543000007c3000008a3300008c3300008e330000903300009233000094330000963300009833000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -568,7 +568,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c0270000ee27000042280000022900003a29000056290000a0290000022a0000a22a0000e02a0000fa2a00000e2b0000ce2b0000e82b00002e2c0000702c0000d82c0000f42c0000542d00005e2e0000282f00006c2f0000882f0000f42f0000fc2f0000143000002e300000563000002c3300002e33000030330000323300003433000036330000383300003a330000
+    m_ExpandedIDs: 00000000c2270000f02700004a2800000c2900004429000060290000aa2900000e2a0000ae2a0000ee2a0000082b00001c2b0000de2b0000f82b00003e2c0000802c0000ea2c0000062d0000702d0000822e00004e2f0000922f0000ae2f00001a300000223000003a300000543000007c3000008a3300008c3300008e3300009033000092330000943300009633000098330000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -621,7 +621,7 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 64
+    m_GridSize: 56
   m_DirectoriesAreaWidth: 263
 --- !u!114 &17
 MonoBehaviour:

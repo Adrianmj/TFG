@@ -11,7 +11,7 @@ public class underwater : MonoBehaviour
     private bool isUnderWater = false;
     private Color normalColor;
     public Color underWaterColor;
-
+    public Camera camara;
     void Start()
     {
 
@@ -46,7 +46,7 @@ public class underwater : MonoBehaviour
     void SetNormal()
     {
         Debug.Log("OVERWATER");
-
+        camara.farClipPlane = 100;
         RenderSettings.fogColor = normalColor;
         RenderSettings.fogDensity = 0.002f;
 
@@ -54,6 +54,7 @@ public class underwater : MonoBehaviour
     void SetUnderWater()
     {
         Debug.Log("UNDERWATER");
+        camara.farClipPlane = 500;
         RenderSettings.fogColor = underWaterColor;
         RenderSettings.fogDensity = 0.01f;
 
