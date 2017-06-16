@@ -27,11 +27,8 @@ public class Selector : MonoBehaviour
 
     void setPanel(string nombreFosil)
     {
-
         TextAsset text = (TextAsset)Resources.Load(nombreFosil, typeof(TextAsset));
 
-
-        Debug.Log(text.text);
         string[] lineas = text.text.Split("\n"[0]);
         titulo.text = lineas[0];
         texto.text = "";
