@@ -183,6 +183,7 @@
     <None Include="Assets\Resources\Certium_vulgatum.txt" />
     <None Include="Assets\Resources\Charonia.txt" />
     <None Include="Assets\Resources\Cymatium_trigonum.txt" />
+    <None Include="Assets\Resources\Erosaria_Spurca.txt" />
     <None Include="Assets\Resources\Hexaplex_Trunculus.txt" />
     <None Include="Assets\Resources\Mitra_Zonata_Marryat.txt" />
     <None Include="Assets\Resources\Patella_Candei.txt" />
