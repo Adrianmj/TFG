@@ -3,30 +3,37 @@ using System.Collections;
 
 public class waveController : MonoBehaviour
 {
-    float scale = 0.01f;
-    float speed = 1.0f;
-    float noiseStrength = 1f;
-    float noiseWalk = 1f;
-
-    private Vector3[] baseHeight;
+    public float speed = 0.5f;
+    private bool ascending = false;
+    public float pleamar;
+    public float bajamar;
 
     void Update()
     {
-        Mesh mesh = GetComponent<MeshFilter>().mesh;
-
-        if (baseHeight == null)
-            baseHeight = mesh.vertices;
-
-        Vector3[] vertices = new Vector3[baseHeight.Length];
-        for (int i = 0; i < vertices.Length; i++)
+        if (ascending)
         {
+            if (transform.position.y < pleamar)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y + speed * Time.deltaTime, transform.position.z);
+            }
+            else
+            {
+                ascending = false;
+            }
 
-            Vector3 vertex = baseHeight[i];
-            vertex.y += Mathf.Sin(Time.time * speed + baseHeight[i].x + baseHeight[i].y + baseHeight[i].z) * scale;
-            vertex.y += Mathf.PerlinNoise(baseHeight[i].x + noiseWalk, baseHeight[i].y + Mathf.Sin(Time.time * 0.1f)) * noiseStrength;
-            vertices[i] = vertex;
+
         }
-        mesh.vertices = vertices;
-        mesh.RecalculateNormals();
+        else if (!ascending)
+        {
+            if (transform.position.y > bajamar)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y - speed * Time.deltaTime, transform.position.z);
+            }
+            else
+            {
+                ascending = true;
+            }
+
+        }
     }
 }

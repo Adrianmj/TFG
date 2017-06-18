@@ -38,7 +38,7 @@ public class Selector : MonoBehaviour
         }
 
         showingPanel = true;
-        panel.transform.position = new Vector3(hit.transform.position.x, transform.position.y + 2, hit.transform.position.z);
+        panel.transform.position = new Vector3(hit.transform.position.x, transform.position.y + 5, hit.transform.position.z);
         panel.transform.LookAt(camara.transform);
         panel.SetActive(true);
 

@@ -6,8 +6,8 @@ public class underwater : MonoBehaviour
 {
 
     public GameObject alturaActual;
+    public GameObject waterlevel;
 
-    public float waterLevel;
     private bool isUnderWater = false;
     private Color normalColor;
     public Color underWaterColor;
@@ -23,10 +23,10 @@ public class underwater : MonoBehaviour
     {
 
 
-        if ((alturaActual.transform.position.y < waterLevel) != isUnderWater)
+        if ((alturaActual.transform.position.y < waterlevel.transform.position.y - 9) != isUnderWater)
         {
 
-            isUnderWater = alturaActual.transform.position.y < waterLevel;
+            isUnderWater = alturaActual.transform.position.y < waterlevel.transform.position.y - 9;
 
             if (isUnderWater)
             {
