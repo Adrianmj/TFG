@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class underwater : MonoBehaviour
 {
@@ -8,10 +9,13 @@ public class underwater : MonoBehaviour
     public GameObject alturaActual;
     public GameObject waterlevel;
 
-    private bool isUnderWater = false;
+    private bool isUnderWater = true;
     private Color normalColor;
     public Color underWaterColor;
     public Camera camara;
+    public Camera underWaterCamera;
+
+    public UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController fps;
     void Start()
     {
 
@@ -23,40 +27,47 @@ public class underwater : MonoBehaviour
     {
 
 
-        if ((alturaActual.transform.position.y < waterlevel.transform.position.y - 9) != isUnderWater)
+        if ((alturaActual.transform.position.y < waterlevel.transform.position.y - 9) && !isUnderWater)
         {
+            SetUnderWater();
+            isUnderWater = true;
 
-            isUnderWater = alturaActual.transform.position.y < waterlevel.transform.position.y - 9;
-
-            if (isUnderWater)
-            {
-                SetUnderWater();
-            }
-
-            if (!isUnderWater)
-            {
-
-                SetNormal();
-            }
-
+        }
+        else if((alturaActual.transform.position.y > waterlevel.transform.position.y - 9) && isUnderWater)
+        {
+            SetNormal();
+            isUnderWater = false;
         }
 
     }
 
     void SetNormal()
     {
-        Debug.Log("OVERWATER");
-        camara.farClipPlane = 100;
+        camara.gameObject.SetActive(true);
+        camara.tag = "GuiCamera";
+
+        underWaterCamera.tag = "Untagged";
+        underWaterCamera.gameObject.SetActive(false);
+
+        
+
+        fps.cam = camara;
+
         RenderSettings.fogColor = normalColor;
         RenderSettings.fogDensity = 0.002f;
 
     }
     void SetUnderWater()
     {
-        Debug.Log("UNDERWATER");
-        camara.farClipPlane = 500;
-        RenderSettings.fogColor = underWaterColor;
-        RenderSettings.fogDensity = 0.01f;
+        underWaterCamera.gameObject.SetActive(true);
+        underWaterCamera.tag = "GuiCamera";
 
+        fps.cam = underWaterCamera;
+
+        camara.tag = "Untagged";
+        camara.gameObject.SetActive(false);
+        //camara.clearFlags = CameraClearFlags.SolidColor;
+        RenderSettings.fogColor = underWaterColor;
+        RenderSettings.fogDensity = 0.05f;
     }
 }
