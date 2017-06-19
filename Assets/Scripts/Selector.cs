@@ -15,9 +15,9 @@ public class Selector : MonoBehaviour
     public GameObject panel;
     public GameObject pointer;
     public Camera camara;
-
     public Text titulo;
     public Text texto;
+
     // Use this for initialization
     void Start()
     {
@@ -47,9 +47,11 @@ public class Selector : MonoBehaviour
     void Update()
     {
 
+              
         pointer.transform.GetComponent<Renderer>().material.color = Color.blue;
         botones.SetActive(false);
-        if (Physics.Raycast(transform.position, (direccion.transform.position - transform.position), out hit, distance))
+
+        if (Physics.Raycast(camara.transform.position, (direccion.transform.position - camara.transform.position), out hit, distance))
         {
             if (hit.transform.tag == "Fosiles" /*&& !showingPanel*/)
             {
@@ -57,8 +59,6 @@ public class Selector : MonoBehaviour
                 botones.SetActive(true);
                 if (Input.GetKeyDown("joystick button 0"))
                 {
-
-
                     setPanel(hit.transform.name);
                 }
             }

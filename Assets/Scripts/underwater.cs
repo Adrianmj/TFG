@@ -14,8 +14,15 @@ public class underwater : MonoBehaviour
     public Color underWaterColor;
     public Camera camara;
     public Camera underWaterCamera;
+    public GameObject gvrN;
+    public GameObject gvrUW;
+    public GameObject drN;
+    public GameObject drUW;
+    public GameObject cnv1;
+    public GameObject cnv2;
 
     public UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController fps;
+    public Selector select; 
     void Start()
     {
 
@@ -43,13 +50,28 @@ public class underwater : MonoBehaviour
 
     void SetNormal()
     {
-        camara.gameObject.SetActive(true);
-        camara.tag = "GuiCamera";
 
-        underWaterCamera.tag = "Untagged";
-        underWaterCamera.gameObject.SetActive(false);
+        underWaterCamera.GetComponent<Camera>().enabled = false;
 
-        
+        camara.GetComponent<Camera>().enabled = true;
+
+
+        camara.transform.position = underWaterCamera.transform.position;
+        camara.transform.rotation = underWaterCamera.transform.rotation;
+
+        gvrN.SetActive(true);
+        gvrUW.SetActive(false);
+
+        drN.SetActive(true);
+        drUW.SetActive(false);
+
+        cnv1.SetActive(true);
+        cnv2.SetActive(false);
+
+
+        select.direccion = drN;
+        select.pointer = gvrN;
+        select.botones = cnv1;
 
         fps.cam = camara;
 
@@ -59,13 +81,32 @@ public class underwater : MonoBehaviour
     }
     void SetUnderWater()
     {
-        underWaterCamera.gameObject.SetActive(true);
-        underWaterCamera.tag = "GuiCamera";
+        camara.GetComponent<Camera>().enabled = false;
+
+        underWaterCamera.GetComponent<Camera>().enabled = true;
+
+        underWaterCamera.transform.position = camara.transform.position;
+        underWaterCamera.transform.rotation = camara.transform.rotation;
+
+        drN.SetActive(false);
+        drUW.SetActive(true);
+
+
+        gvrN.SetActive(false);
+        gvrUW.SetActive(true);
+
+        cnv2.SetActive(true);
+        cnv1.SetActive(false);
+
+
+        select.direccion = drUW;
+        select.pointer = gvrUW;
+        select.botones = cnv2;
 
         fps.cam = underWaterCamera;
 
-        camara.tag = "Untagged";
-        camara.gameObject.SetActive(false);
+       
+
         //camara.clearFlags = CameraClearFlags.SolidColor;
         RenderSettings.fogColor = underWaterColor;
         RenderSettings.fogDensity = 0.05f;
