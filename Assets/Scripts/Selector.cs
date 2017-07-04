@@ -6,17 +6,15 @@ public class Selector : MonoBehaviour
 {
 
     public GameObject direccion;
-
-
     private RaycastHit hit;
     public float distance = 100;
     public GameObject botones;
-    private bool showingPanel = false;
     public GameObject panel;
     public GameObject pointer;
     public Camera camara;
     public Text titulo;
     public Text texto;
+    public GameObject Glosario;
 
     // Use this for initialization
     void Start()
@@ -37,9 +35,9 @@ public class Selector : MonoBehaviour
             texto.text += ("\n" + lineas[i]);
         }
 
-        showingPanel = true;
         panel.transform.position = new Vector3(hit.transform.position.x, transform.position.y + 5, hit.transform.position.z);
         panel.transform.LookAt(camara.transform);
+        Glosario.SetActive(false);
         panel.SetActive(true);
 
     }
@@ -47,13 +45,13 @@ public class Selector : MonoBehaviour
     void Update()
     {
 
-              
+
         pointer.transform.GetComponent<Renderer>().material.color = Color.blue;
         botones.SetActive(false);
 
         if (Physics.Raycast(camara.transform.position, (direccion.transform.position - camara.transform.position), out hit, distance))
         {
-            if (hit.transform.tag == "Fosiles" /*&& !showingPanel*/)
+            if (hit.transform.tag == "Fosiles")
             {
                 pointer.transform.GetComponent<Renderer>().material.color = Color.red;
                 botones.SetActive(true);
@@ -67,8 +65,19 @@ public class Selector : MonoBehaviour
 
         if (Input.GetKeyDown("joystick button 1"))
         {
-            showingPanel = false;
             panel.SetActive(false);
+            Glosario.SetActive(false);
+        }
+
+        if (Input.GetKeyDown("joystick button 2"))
+        {
+            Debug.Log("X");
+            panel.SetActive(false);
+
+            Glosario.transform.position = new Vector3(direccion.transform.position.x, direccion.transform.position.y + 2, direccion.transform.position.z);
+
+            Glosario.transform.LookAt(camara.transform);
+            Glosario.SetActive(true);
         }
     }
 

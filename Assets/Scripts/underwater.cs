@@ -109,6 +109,6 @@ public class underwater : MonoBehaviour
 
         //camara.clearFlags = CameraClearFlags.SolidColor;
         RenderSettings.fogColor = underWaterColor;
-        RenderSettings.fogDensity = 0.05f;
+        RenderSettings.fogDensity = 0.02f;
     }
 }
