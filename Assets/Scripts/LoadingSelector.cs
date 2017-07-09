@@ -26,22 +26,16 @@ public class LoadingSelector : MonoBehaviour {
 
         if (Physics.Raycast(camara.transform.position, (direccion.transform.position - camara.transform.position), out hit, distance))
         {
-
-            if (Input.GetKeyDown("joystick button 0"))
+            if (hit.transform.tag == "Avanzar")
             {
-                SceneManager.LoadScene("Playa1");
-                //Application.LoadLevel("Playa1");
-            }
-            //if (hit.transform.tag == "Avanzar")
-            //{
-            //    pointer.transform.GetComponent<Renderer>().material.color = Color.red;
+                pointer.transform.GetComponent<Renderer>().material.color = Color.red;
 
-            //    if (Input.GetKeyDown("joystick button 0"))
-            //    {
-            //        SceneManager.LoadScene("Playa1");
-            //        //Application.LoadLevel("Playa1");
-            //    }
-            //}
+                if (Input.GetKeyDown("joystick button 0"))
+                {
+                    SceneManager.LoadScene("Playa1");
+                    //Application.LoadLevel("Playa1");
+                }
+            }
 
         }
 
