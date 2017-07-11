@@ -35,7 +35,7 @@ public class Selector : MonoBehaviour
             texto.text += ("\n" + lineas[i]);
         }
 
-        panel.transform.position = new Vector3(hit.transform.position.x, transform.position.y + 5, hit.transform.position.z);
+        panel.transform.position = new Vector3(hit.transform.position.x, transform.position.y + 10, hit.transform.position.z);
         panel.transform.LookAt(camara.transform);
         Glosario.SetActive(false);
         panel.SetActive(true);
@@ -73,7 +73,7 @@ public class Selector : MonoBehaviour
             Debug.Log("X");
             panel.SetActive(false);
 
-            Glosario.transform.position = new Vector3(direccion.transform.position.x, direccion.transform.position.y + 2, direccion.transform.position.z);
+            Glosario.transform.position = new Vector3(direccion.transform.position.x, direccion.transform.position.y + 5, direccion.transform.position.z);
 
             Glosario.transform.LookAt(camara.transform);
             Glosario.SetActive(true);

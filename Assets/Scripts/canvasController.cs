@@ -7,9 +7,13 @@ public class canvasController : MonoBehaviour
 
     public Camera camara;
     public Camera underWaterCamera;
+    public GameObject character;
+
     // Use this for initialization
     void Start()
     {
+        character.SetActive(true);
+
     }
 
     // Update is called once per frame

@@ -22,16 +22,16 @@ public class underwater : MonoBehaviour
     public GameObject cnv2;
 
     public UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController fps;
-    public Selector select; 
+    public Selector select;
     void Start()
     {
 
         normalColor = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-
     }
 
     void Update()
     {
+
 
 
         if ((alturaActual.transform.position.y < waterlevel.transform.position.y - 9) && !isUnderWater)

@@ -34,7 +34,6 @@ public class LoadingSelector : MonoBehaviour {
                 {
                     SceneManager.LoadScene("Playa1");
 
-                    //Application.LoadLevel("Playa1");
                 }
             }
 
