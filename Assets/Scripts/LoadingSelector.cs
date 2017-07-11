@@ -33,6 +33,7 @@ public class LoadingSelector : MonoBehaviour {
                 if (Input.GetKeyDown("joystick button 0"))
                 {
                     SceneManager.LoadScene("Playa1");
+
                     //Application.LoadLevel("Playa1");
                 }
             }

@@ -45,7 +45,7 @@ public class Selector : MonoBehaviour
     void Update()
     {
 
-
+        Debug.Log("hey");
         pointer.transform.GetComponent<Renderer>().material.color = Color.blue;
         botones.SetActive(false);
 
