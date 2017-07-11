@@ -171,7 +171,7 @@
     <None Include="Assets\Plugins\Android\AndroidManifest-Cardboard.xml" />
     <None Include="Assets\Plugins\Android\AndroidManifest-Daydream.xml" />
     <None Include="Assets\Plugins\Android\proguard-gvr.txt" />
-    <None Include="Assets\Resources\Bulma_rugosa.txt" />
+    <None Include="Assets\Resources\Bolma_rugosa.txt" />
     <None Include="Assets\Resources\Bursa_Scrobilator.txt" />
     <None Include="Assets\Resources\Cantharus_viverratus.txt" />
     <None Include="Assets\Resources\Certium_vulgatum - copia.txt" />
